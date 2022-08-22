@@ -19,9 +19,6 @@
     {
         return $form === $selection ? "selected" : "";
     }
-
-    //var_dump($data);
-    //var_dump($validation);
 ?>
 
 <!DOCTYPE html>

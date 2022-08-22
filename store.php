@@ -58,19 +58,19 @@ function validateData(array $data): array
     if (! isCpfValid($data["cpf"])) {
         $output[] = "Insira um CPF válido.";
     }
-    
+
     if (! isEmailValid($data["email"])) {
         $output[] = "O email deve possuir um formato válido.";
     }
-    
+
     if (! isPhoneValid($data["phone"])) {
         $output[] = "Insira um telefone válido.";
     }
 
     if (! sizeGreaterThan($data["hobbies"] ?? [], 2)) {
-        $output[] = "Selecione pelo menos três hobbies.";
+        $output[] = "Selecione pelo menos três ho   bbies.";
     }
-    
+
     if (! isInList($data["age"], ["child", "adult", "elder"])) {
         $output[] = "Selecione pelo menos uma faixa etária.";
     }
@@ -81,7 +81,7 @@ function validateData(array $data): array
 
     if ($data["photo"]["error"] != 0) {
         $output[] = "O upload da imagem não foi bem sucedido, tente novamente.";
-    }    
+    }
 
     if (! isSizeWithinLimits($data["photo"]["size"], 0, 2 * $MEGABYTE)) {
         $output[] = "Selecione pelo menos uma imagem.";
@@ -128,7 +128,7 @@ function isInList(string $item, array $list): bool
 
 function isSizeWithinLimits(int $element, int $infLimit, int $supLimit): bool
 {
-    return $element > $infLimit && $element <= $supLimit;   
+    return $element > $infLimit && $element <= $supLimit;
 }
 
 function dump($data): void
